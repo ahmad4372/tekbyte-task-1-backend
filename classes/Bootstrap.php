@@ -108,8 +108,9 @@ final class Bootstrap {
 	 * @return void
 	 */
 	private function init_features() {
-		CaseStudy::get_instance()->hooks();
-		Industry::get_instance()->hooks();
+		CaseStudy::get_instance()->init();
+		Industry::get_instance()->init();
+		Config::get_instance()->init();
 	}
 
 	/**

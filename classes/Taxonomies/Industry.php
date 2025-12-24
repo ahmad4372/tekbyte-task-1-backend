@@ -17,7 +17,7 @@ final class Industry {
 	 *
 	 * @return void
 	 */
-	public function hooks() {
+	public function init() {
 		add_action( 'init', array( $this, 'register' ) );
 		add_filter( 'term_updated_messages', array( $this, 'updated_messages' ) );
 	}

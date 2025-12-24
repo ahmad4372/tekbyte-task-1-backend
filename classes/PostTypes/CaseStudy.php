@@ -17,7 +17,7 @@ final class CaseStudy {
 	 *
 	 * @return void
 	 */
-	public function hooks() {
+	public function init() {
 		add_action( 'init', array( $this, 'register' ) );
 		add_filter( 'post_updated_messages', array( $this, 'updated_messages' ) );
 		add_filter( 'bulk_post_updated_messages', array( $this, 'bulk_updated_messages' ), 10, 2 );
@@ -63,7 +63,7 @@ final class CaseStudy {
 				'hierarchical'          => false,
 				'show_ui'               => true,
 				'show_in_nav_menus'     => true,
-				'supports'              => array( 'title', 'editor' ),
+				'supports'              => array( 'title', 'editor', 'author', 'yoast-seo' ),
 				'has_archive'           => true,
 				'rewrite'               => true,
 				'query_var'             => true,
@@ -133,5 +133,3 @@ final class CaseStudy {
 		return $bulk_messages;
 	}
 }
-
-
